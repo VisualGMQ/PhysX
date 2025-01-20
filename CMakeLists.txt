@@ -18,4 +18,10 @@ if (NOT WIN32)
     set(TARGET_BUILD_PLATFORM linux)
 endif()
 
+
+set(PX_SCALAR_MATH OFF)
+# PhysX SIMD support is not correct under MacOSX
+if (APPLE)
+    set(PX_SCALAR_MATH ON)
+endif()
 add_subdirectory(physx/compiler/public)

@@ -53,9 +53,9 @@ namespace physx
 			V3StoreU(column1V, column1);
 			V3StoreU(column2V, column2);
 #else
-			V3StoreU(column0V, column0);
-			V3StoreU(column1V, column1);
-			V3StoreU(column2V, column2);
+			V4StoreU(column0V, &column0.x);
+			V4StoreU(column1V, &column1.x);
+			V4StoreU(column2V, &column2.x);
 #endif
 		}
 		PX_FORCE_INLINE ~PxMat33Padded()				{}

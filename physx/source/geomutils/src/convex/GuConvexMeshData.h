@@ -89,7 +89,7 @@ namespace Gu
 	};
 	PX_COMPILE_TIME_ASSERT(sizeof(Gu::InternalObjectsData) == 16);
 	// PT: ensure that mInternalExtents is not the last member of InternalObjectsData, i.e. it is safe to load 4 bytes after mInternalExtents
-	PX_COMPILE_TIME_ASSERT(PX_OFFSET_OF(InternalObjectsData, mInternalExtents)+sizeof(InternalObjectsData::mInternalExtents) + 4 <= sizeof(InternalObjectsData));
+	PX_COMPILE_TIME_ASSERT(PX_OFFSET_OF(InternalObjectsData, mInternalExtents)+sizeof(decltype(InternalObjectsData::mInternalExtents)) + 4 <= sizeof(InternalObjectsData));
 //~TEST_INTERNAL_OBJECTS
 
 	struct ConvexHullData
