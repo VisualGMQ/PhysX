@@ -21,7 +21,8 @@ endif()
 
 set(PX_SCALAR_MATH OFF)
 # PhysX SIMD support is not correct under MacOSX
-if (APPLE)
+if (APPLE OR ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    message(STATUS "PhysX: disable SIMD")
     set(PX_SCALAR_MATH ON)
 endif()
 add_subdirectory(physx/compiler/public)
